@@ -1,22 +1,21 @@
 {
-  "name": "matterbridge-example-dynamic-platform",
-  "version": "1.0.25",
-  "description": "Matterbridge dynamic plugin",
-  "author": "https://github.com/Luligu",
+  "name": "matterbridge-webhook",
+  "version": "0.0.1",
+  "description": "Matterbridge webhook plugin",
+  "author": "https://github.com/IvoGruber",
+  "contributors": [
+    {"name": "",  "url": "https://github.com/Luligu"}
+  ],
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luligu/matterbridge-example-dynamic-platform.git"
+    "url": "git+https://github.com/IvoGruber/matterbridge-webhook.git"
   },
   "bugs": {
-    "url": "https://github.com/Luligu/matterbridge-example-dynamic-platform/issues"
-  },
-  "funding": {
-    "type": "buymeacoffee",
-    "url": "https://www.buymeacoffee.com/luligugithub"
+    "url": "https://github.com/IvoGruber/matterbridge-webhook/issues"
   },
   "keywords": [
     "matterbridge",
