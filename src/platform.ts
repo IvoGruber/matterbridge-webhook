@@ -6,7 +6,7 @@ import {
 } from 'matterbridge';
 import { Matterbridge, MatterbridgeDevice, MatterbridgeDynamicPlatform } from 'matterbridge';
 import { AnsiLogger } from 'matterbridge/logger';
-import { DeviceConfig, config } from './config.js'
+import { DeviceConfig } from './config.js'
 
 export class ExampleMatterbridgeDynamicPlatform extends MatterbridgeDynamicPlatform {
   outlets: Array<MatterbridgeDevice | undefined> = [];
@@ -113,8 +113,9 @@ export class ExampleMatterbridgeDynamicPlatform extends MatterbridgeDynamicPlatf
 
   override async onStart(reason?: string) {
     this.log.info('onStart called with reason:', reason ?? 'none');
-    config.forEach(async (deviceConfig) => {
-      const outlet = await this.createWebhookOutlet(deviceConfig);
+    const webhooks = this.config.webhookList as Array<DeviceConfig>;
+    webhooks.forEach(async (webhook) => {
+      const outlet = await this.createWebhookOutlet(webhook);
       this.outlets.push(outlet);
     });
   }

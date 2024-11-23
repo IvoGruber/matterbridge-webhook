@@ -1,0 +1,62 @@
+{
+  "title": "Matterbridge shelly plugin",
+  "description": "matterbridge-webhook v. 0.0.2 by https://github.com/IvoGruber",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Plugin name",
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "description": "Plugin type",
+      "type": "string",
+      "readOnly": true
+    },
+    "exposeSwitch": {
+      "description": "Choose how to expose the webhook switches: as a switch (don't use it for Alexa), light or outlet",
+      "type": "string",
+      "enum": [
+        "switch",
+        "light",
+        "outlet"
+      ],
+      "default": "outlet"
+    },
+    "webhookList": {
+      "description": "The webhook urls.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the device.",
+            "type": "string"
+          },
+          "serialNumber": {
+            "description": "The serial number of the device.",
+            "type": "string"
+          },
+          "method": {
+            "description": "Choose method of the webhook.",
+            "type": "string",
+            "enum": [
+              "GET",
+              "POST"
+            ],
+            "default": "GET"
+          },
+          "url": {
+            "description": "The url of the webhook to call.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unregisterOnShutdown": {
+      "description": "Unregister all devices on shutdown (development only)",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
